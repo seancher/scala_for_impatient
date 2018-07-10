@@ -36,3 +36,11 @@ order.
 */
 val arr = Array(1, -1, 0, 2, -2, 0, -3, 3, 0)
 arr.filter(_ > 0).union(arr.filter(_ <= 0))
+
+/*
+How do you compute the average of an Array[Double]?
+*/
+
+var arr = Array(1.0, 2.0, 3.1, 5.9, 1.4)
+arr.reduce(_ + _) / arr.length
+arr.sum / arr.length
