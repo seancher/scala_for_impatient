@@ -28,3 +28,11 @@ for/yield.
 
 val arr = Array(1, 2, 3, 4, 5)
 for (i <- arr.indices) yield (if (i % 2 == 0) arr(i + 1) else arr(i - 1))
+
+/*
+4. Given an array of integers, produce a new array that contains all positive values of the original
+array, in their original order, followed by all values that are zero or negative, in their original
+order.
+*/
+val arr = Array(1, -1, 0, 2, -2, 0, -3, 3, 0)
+arr.filter(_ > 0).union(arr.filter(_ <= 0))
