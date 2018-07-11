@@ -65,3 +65,17 @@ Look at Scaladoc.)
 val arr = Array(1, 2, 3, -1, 0, -2, 0, -3, 0)
 arr.distinct
 
+/*
+8. Suppose you are given an array buffer of integers and want to remove all but the first negative
+number. Here is a sequential solution that sets a flag when the first negative number is called,
+then removes all elements beyond.
+*/
+// Option 1
+val arrb = ArrayBuffer(1, 2, 3, -1, 0, -2, 0, -3, 0)
+val negInd = (for (i <- arrb.indices if arrb(i) < 0) yield i).drop(1).reverse
+for (i <- negInd) arrb.remove(i)
+// Option 2
+val arrb_pos = arrb.filter(_ >= 0)
+val idx = arrb.indexWhere(_ < 0)
+val idval = arrb(idx)
+arrb_pos.insert(idx, idval)
