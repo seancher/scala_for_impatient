@@ -79,3 +79,11 @@ val arrb_pos = arrb.filter(_ >= 0)
 val idx = arrb.indexWhere(_ < 0)
 val idval = arrb(idx)
 arrb_pos.insert(idx, idval)
+
+/*
+10. Make a collection of all time zones returned by
+java.util.TimeZone.getAvailableIDs that are in America. Strip off the
+"America/" prefix and sort the result.
+*/
+val timeZones = java.util.TimeZone.getAvailableIDs
+timeZones.filter(_.containsSlice("America/")).sorted
