@@ -57,3 +57,11 @@ val arrb = ArrayBuffer(1, 2, 3, -1, 0, -2, 0, -3, 0)
 
 arr.sorted.reverse
 arrb.sorted.reverse
+
+/*
+7. . Write a code snippet that produces all values from an array with duplicates removed. (Hint:
+Look at Scaladoc.)
+*/
+val arr = Array(1, 2, 3, -1, 0, -2, 0, -3, 0)
+arr.distinct
+
