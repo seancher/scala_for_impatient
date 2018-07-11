@@ -87,3 +87,14 @@ java.util.TimeZone.getAvailableIDs that are in America. Strip off the
 */
 val timeZones = java.util.TimeZone.getAvailableIDs
 timeZones.filter(_.containsSlice("America/")).sorted
+
+/*
+11. Import java.awt.datatransfer._ and make an object of type SystemFlavorMap
+with the call
+...
+*/
+
+import java.awt.datatransfer._
+val flavors = SystemFlavorMap.getDefaultFlavorMap().asInstanceOf[SystemFlavorMap]
+flavors.getNativesForFlavor(DataFlavor.imageFlavor)
+/// res238: java.util.List[String] = [PNG, JFIF, TIFF]
