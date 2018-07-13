@@ -6,3 +6,22 @@ val gizmo_price100 = Map("phone" -> 700, "car" -> 20000, "headphones" -> 400)
 val (gizmo, price100) = gizmo_price100.unzip
 val price90 = price100.map{a => (a.toDouble * .9).toInt}
 gizmo.zip(price90).toMap
+
+/*
+Write a program that reads words from a file. Use a mutable map to count how often each word
+appears. To read the words, simply use a java.util.Scanner:
+*/
+
+// option 1
+val in = new java.util.Scanner(new java.io.File("chapter3._working_with_arrays.scala"))
+var wordCount = Map[String, Int]()
+
+while (in.hasNext()) {
+  val nextWord = in.next();
+  if (wordCount.getOrElse(nextWord, 0) == 0)
+    wordCount += (nextWord -> 1)
+  else wordCount += nextWord ->  (wordCount(nextWord) + 1)
+  }
+
+val (keys, vals) = wordCount.unzip
+
