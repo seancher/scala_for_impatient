@@ -43,3 +43,11 @@ def lteqgt(values: Array[Int], v:Int): (Int, Int, Int) = {
 val arr = Array(1, 5, 2, 7, 3)
 
 lteqgt(arr, 4)
+
+/*
+10. What happens when you zip together two strings, such as "Hello".zip("World")? Come
+up with a plausible use case.
+*/
+
+"Hello".zip("hello")
+  .filter(t => t._1 != t._2)
