@@ -28,7 +28,18 @@ val (keys, vals) = wordCount.unzip
 8. Write a function minmax(values: Array[Int]) that returns a pair containing the
 smallest and the largest values in the array.
 */
-rray(1, 5, 2 ,7  ,3 )
- ef minmax(values: Array[Int]): (Int, Int) = {
+array(1, 5, 2 ,7  ,3 )
+def minmax(values: Array[Int]): (Int, Int) = {
   (values.min, values.max)
+/*
+
+9. Write a function lteqgt(values: Array[Int], v: Int) that returns a triple
+containing the counts of values less than v, equal to v, and greater than v.
+/*
+def lteqgt(values: Array[Int], v:Int): (Int, Int, Int) = {
+  (values.count(_ < v), values.count(_ == v), values.count(_ > v))
 }
+
+val arr = Array(1, 5, 2, 7, 3)
+
+lteqgt(arr, 4)
