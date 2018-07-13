@@ -1,0 +1,8 @@
+/*
+1. Set up a map of prices for a number of gizmos that you covet. Then produce a second map with
+the same keys and the prices at a 10 percent discount.
+*/
+val gizmo_price100 = Map("phone" -> 700, "car" -> 20000, "headphones" -> 400)
+val (gizmo, price100) = gizmo_price100.unzip
+val price90 = price100.map{a => (a.toDouble * .9).toInt}
+gizmo.zip(price90).toMap
