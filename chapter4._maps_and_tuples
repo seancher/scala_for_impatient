@@ -24,6 +24,18 @@ while (in.hasNext()) {
 
 val (keys, vals) = wordCount.unzip
 
+
+/*
+7. Print a table of all Java properties reported by the getProperties method of the
+java.lang.System class, like this: ...
+*/
+val javaProperties = java.lang.System.getProperties
+val javaKeys = javaProperties.keySet.toArray.map(_.toString)
+val javaValues = javaProperties.values.toArray.map(_.toString)
+var maxlen = 0
+javaKeys.foreach{a => if (a.length > maxlen) maxlen = a.length}
+for ((k,v) <- javaKeys.zip(javaValues)) println(k + " " * (maxlen - k.length) + " | " + v)
+
 /*
 8. Write a function minmax(values: Array[Int]) that returns a pair containing the
 smallest and the largest values in the array.
