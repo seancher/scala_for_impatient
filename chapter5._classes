@@ -8,3 +8,13 @@ class Counter {
   def increment() { if (value < Int.MaxValue) value += 1 } // Methods are public by default
   def current() = value
 }
+
+/*
+Write a class BankAccount with methods deposit and withdraw, and a read-only property balance.
+*/
+
+class BankAccount (private var pBalance: Int = 0) {
+  def balance = pBalance
+  def deposit (up: Int) { pBalance += up }
+  def withdraw (down: Int) { pBalance -= down }
+}
