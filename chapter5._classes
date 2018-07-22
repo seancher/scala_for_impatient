@@ -39,3 +39,33 @@ class Time (private val hrs: Int, private val mins: Int) {
   }
 }
 
+/*
+4. Reimplement the Time class from the preceding exercise so that the internal representation is
+the number of minutes since midnight (between 0 and 24 × 60 – 1). Do not change the public
+interface. That is, client code should be unaffected by your change.
+*/
+
+class Time private() {
+  
+  private var mins: Int = 0
+
+  def this (mins: Int, hrs: Int) {
+    this()
+    if (hrs < 0 || hrs > 23) {
+      throw new IllegalArgumentException("Hours should be in military format (between 0 and 23)")
+    }
+    if (mins < 0 || mins > 59) {
+      throw new IllegalArgumentException("Minutes should be in military format (between 0 and 59)")
+    }
+    this.mins = mins + hrs * 60
+  }
+
+  def hours = mins / 60
+
+  def minutes = mins % 60
+  
+  def before (other: Time): Boolean = {
+    this.mins < other.mins
+  }
+
+}
