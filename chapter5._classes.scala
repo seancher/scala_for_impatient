@@ -69,3 +69,30 @@ class Time private() {
   }
 
 }
+
+/*
+MY TESTS
+*/
+import scala.collection.mutable.ArrayBuffer
+class Network {
+  class Member(val name: String) {
+    val contacts = new ArrayBuffer[Member]
+  }
+  var members = new ArrayBuffer[Member]
+  def join(name: String) = {
+    val member = new Member(name)
+    members += member
+    member
+  }
+}
+
+val chatter = new Network
+val fred = chatter.join("Fred")
+val wilma = chatter.join("Wilma")
+val sergey = chatter.join("Sergey")
+fred.contacts += wilma
+fred.contacts += sergey
+
+This way you'll see Fred's contacts. Although the contact were added to only fred object. Fred object is an instance of chatter inner class.
+chatter.members(0).contacts
+
