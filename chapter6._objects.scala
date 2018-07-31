@@ -43,3 +43,12 @@ object Point extends Point {
     new Point(x, y)
   }
 }
+
+/*
+5. Write a Scala application, using the App trait, that prints its command-line arguments in reverse order, separated by spaces. For example, scala Reverse Hello World should print World Hello.
+*/
+// put the object in a separate file and execute as follows
+// scala -nc main.scala
+object MyApp extends App {
+  for (a <- args.reverse) println(a)
+}
