@@ -25,3 +25,21 @@ class UnitConversion (factor: Double) {
   def convert (unit: Double) = unit * factor }
 
 object InchesToCentimeters extends UnitConversion(2,54)
+
+/*
+3. Define an Origin object that extends java.awt.Point. Why is this not actually a good idea? (Have a close look at the methods of the Point class.)
+*/
+import java.awt.Point
+object Origin extends Point
+
+/*
+4. Define a Point class with a companion object so that you can construct Point instances as Point(3, 4), without using new.
+*/
+
+import java.awt.Point
+
+object Point extends Point {
+  def apply(x: Int, y: Int): Point = {
+    new Point(x, y)
+  }
+}
